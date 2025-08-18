@@ -1,0 +1,66 @@
+{
+  "services": [
+    {
+      "name": "Profilarr",
+      "url": "profilarr.rsap.sh",
+      "port": null,
+      "icon": "https://media.sys.truenas.net/apps/profilarr/icons/icon.png"
+    },
+    {
+      "name": "Sonarr",
+      "url": "sonarr.rsap.sh",
+      "port": null,
+      "icon": "https://getumbrel.github.io/umbrel-apps-gallery/sonarr/icon.svg"
+    },
+    {
+      "name": "Radarr",
+      "url": "radarr.rsap.sh",
+      "port": null,
+      "icon": "https://avatars.githubusercontent.com/u/25025331?v=4"
+    },
+    {
+      "name": "NZBGet",
+      "url": "nzb.rsap.sh",
+      "port": null,
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nzbget.png"
+    },
+    {
+      "name": "Prowlarr",
+      "url": "prowlarr.rsap.sh",
+      "port": null,
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMyk_H1lzAmZtTEC6cN3eJd-AYL6bJ6Wn-gA&s"
+    },
+    {
+      "name": "Jitsi",
+      "url": "meet.rsap.sh",
+      "port": null,
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Logo_Jitsi.svg"
+    },
+    {
+      "name": "Jellyfin",
+      "url": "jf.rsap.sh",
+      "port": null,
+      "icon": "https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/icon-transparent.svg"
+    },
+    {
+      "name": "NetMaker",
+      "url": "dashboard.rsap.sh",
+      "port": null,
+      "icon": "https://styles.redditmedia.com/t5_57e0na/styles/communityIcon_j14xtktg11391.png"
+    },
+    {
+      "name": "Pelican",
+      "url": "pelican.rsap.sh",
+      "port": null,
+      "icon": "https://avatars.githubusercontent.com/u/163904900?v=4"
+    },
+    {
+      "name": "ExampleOffline",
+      "url": "offline.rsap.sh",
+      "port": null,
+      "icon": "https://avatars.githubusercontent.com/u/163904900?v=4"
+    }
+  ],
+  "statusApiUrl": "/api",
+  "refreshInterval": 30
+}
