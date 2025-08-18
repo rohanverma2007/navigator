@@ -1,2 +1,2 @@
-# navigator-
-Navigate between your HomeLab services!
+# navigator 🧭
+Navigate between your HomeLab services
