@@ -14,10 +14,11 @@ Navigate between your HomeLab services
 ```
 git clone https://github.com/rohanverma2007/navigator.git
 ```
+2. cd into the navigator directory `cd navigator`
 
-2. simply run the command `docker compose up -d` (or `podman-compose up -d` if you use podman)
+3. simply run the command `docker compose up -d` (or `podman-compose up -d` if you use podman)
 
-3. should be running on port 11080, a reverse proxy is recommended for this setup
+4. should be running on port 11080, a reverse proxy is recommended for this setup
 
 ## reverse proxies?
 I currently use Traefik on my podman containers, heres the labels I have on my navigator container, but you can really use whatever reverse proxy you want (etc. NGINX, Caddy, Apache)
