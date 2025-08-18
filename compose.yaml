@@ -1,0 +1,28 @@
+services:
+  navigator:
+    image: node:18-alpine
+    container_name: navigator
+    restart: unless-stopped
+    working_dir: /app
+    command: node server.js
+    ports:
+      - "11080:11080"
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    volumes:
+      - ./index.html:/app/index.html:ro
+      - ./services.json:/app/services.json:ro
+      - ./assets/dark.png:/app/dark.png:ro
+      - ./assets/light.png:/app/light.png:ro
+      - ./status-api/server.js:/app/server.js:ro
+      - ./status-api/package.json:/app/package.json:ro
+    environment:
+      - PORT=11080
+      - NODE_ENV=production
+    entrypoint: |
+      sh -c "
+        apk add --no-cache curl &&
+        npm install --only=production --silent &&
+        node server.js
+      "
