@@ -1,10 +1,10 @@
 services:
   navigator:
-    image: node:18-alpine
+    image: alpine:latest
     container_name: navigator
     restart: unless-stopped
     working_dir: /app
-    command: node server.js
+    command: ./server
     ports:
       - "11080:11080"
     dns:
@@ -15,14 +15,25 @@ services:
       - ./services.json:/app/services.json:ro
       - ./assets/dark.png:/app/dark.png:ro
       - ./assets/light.png:/app/light.png:ro
-      - ./status-api/server.js:/app/server.js:ro
-      - ./status-api/package.json:/app/package.json:ro
-    environment:
-      - PORT=11080
-      - NODE_ENV=production
+      - ./status-api/server.c:/app/server.c:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.navigate.rule=Host(`navigate.rsap.sh`)"
+      - "traefik.http.routers.navigate.entrypoints=websecure"
+      - "traefik.http.routers.navigate.tls=true"
+      - "traefik.http.routers.navigate.tls.certresolver=lets-encrypt"
+      - "traefik.http.services.navigate.loadbalancer.server.port=11080"
+    networks:
+      - podman
     entrypoint: |
       sh -c "
-        apk add --no-cache curl &&
-        npm install --only=production --silent &&
-        node server.js
+        apk add --no-cache curl gcc musl-dev &&
+        gcc -Os -s -ffunction-sections -fdata-sections -Wl,--gc-sections -o server server.c &&
+        strip --strip-all server &&
+        ls -lh server &&
+        ./server
       "
+
+networks:
+  podman:
+    external: true
