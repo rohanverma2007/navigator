@@ -27,6 +27,12 @@ git clone https://github.com/rohanverma2007/navigator.git
 
 4. should be running on port 11080, a reverse proxy is recommended for this setup
 
+## how do i update?
+
+1. cd into the git cloned directory
+
+2. type inside the dir `git pull`
+
 ## reverse proxies?
 I currently use Traefik on my podman containers, heres the labels I have on my navigator container, but you can really use whatever reverse proxy you want (etc. NGINX, Caddy, Apache)
 ```
