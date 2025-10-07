@@ -21,6 +21,11 @@ Navigate between your HomeLab services
 ```
 git clone https://github.com/rohanverma2007/navigator.git
 ```
+or clone this if your on arm
+```
+git clone -b arm https://github.com/rohanverma2007/navigator.git
+```
+
 2. cd into the navigator directory `cd navigator`
 
 3. simply run the command `docker compose up -d` (or `podman-compose up -d` if you use podman)
