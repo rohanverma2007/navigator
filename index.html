@@ -1,111 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Navigator</title>
-<link rel="icon" href="dark.png">
-<link rel="apple-touch-icon" href="light.png">
-<style>*{margin:0;padding:0;box-sizing:border-box}:root{--bp:#fff;--bs:#f8f8f8;--bh:#f0f0f0;--bc:#fff;--tp:#000;--ts:#666;--b:#e0e0e0;--s:rgba(0,0,0,.08);--l:url(light.png);--on:#00c851;--of:#ff3547}[data-theme=dark]{--bp:#0a0a0a;--bs:#1a1a1a;--bh:#252525;--bc:#141414;--tp:#fff;--ts:#999;--b:#2a2a2a;--s:rgba(0,0,0,.4);--l:url(dark.png)}body{font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif;background:var(--bp);color:var(--tp);min-height:100vh;padding:60px 40px;transition:background-color .3s,color .3s}.c{max-width:1400px;margin:0 auto}.h{margin-bottom:60px;display:flex;align-items:center;gap:16px}.lo{width:40px;height:40px;background:var(--l) no-repeat center/contain;flex-shrink:0;transform:translateY(-1px)}h1{font-size:2rem;font-weight:400;letter-spacing:-.02em;transform:translateY(-2px)}.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}.sc{background:var(--bs);border:1px solid var(--b);border-radius:12px;padding:24px;text-decoration:none;color:var(--tp);transition:all .2s;position:relative;display:flex;align-items:center;gap:20px}.sc:hover{background:var(--bh);transform:translateY(-2px);box-shadow:0 8px 24px var(--s)}.si{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;background:var(--bc);border:1px solid var(--b);overflow:hidden}.si img{width:100%;height:100%;object-fit:contain}.sn{flex:1;min-width:0}.sn>div:first-child{font-size:16px;font-weight:500;margin-bottom:4px}.sn>div:last-child{font-size:13px;color:var(--ts);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.d{position:absolute;top:12px;right:12px;width:8px;height:8px;border-radius:50%;background:var(--b);transition:all .3s}.d.on{background:var(--on);box-shadow:0 0 8px rgba(0,200,81,.4)}.d.of{background:var(--of);box-shadow:0 0 8px rgba(255,53,71,.4)}.e,.l{text-align:center;padding:100px 20px;color:var(--ts)}.e h2{font-size:1.5rem;font-weight:400;margin-bottom:10px;color:var(--tp)}.e p,.l{font-size:14px}.er,.ce{background:var(--bs);border:1px solid var(--b);border-radius:12px;padding:40px;text-align:center;color:var(--ts)}.ce{padding:20px;margin-top:20px;text-align:left}.er h2,.ce h3{font-weight:400;margin-bottom:10px;color:var(--tp)}.er h2{font-size:1.2rem}.ce h3{font-size:14px;font-weight:500}.er pre,.ce pre{background:var(--bc);border:1px solid var(--b);border-radius:8px;padding:12px;margin-top:20px;font-size:12px;text-align:left;overflow-x:auto;font-family:'SF Mono',Monaco,monospace;color:var(--tp)}.ce pre{border-radius:4px;margin-top:10px}.sb{position:fixed;bottom:20px;right:20px;font-size:14px;color:var(--ts);font-family:-apple-system,BlinkMacSystemFont,Inter,system-ui,sans-serif;font-weight:400;letter-spacing:-.01em;background:var(--bs);padding:10px 16px;border:1px solid var(--b);border-radius:8px;backdrop-filter:blur(8px)}.ft{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);color:var(--ts);opacity:0.3;font-size:12px}.ft span{color:#ef4444;opacity:0.6}.ft a{color:inherit;text-decoration:none;transition:opacity 0.2s}.ft a:hover{opacity:2;text-decoration:underline}.tt{position:fixed;top:20px;right:20px;width:44px;height:44px;border-radius:12px;background:var(--bs);border:1px solid var(--b);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:20px}.tt:hover{background:var(--bh);transform:scale(1.05)}.tt:active{transform:scale(.95)}code{background:var(--bh);padding:2px 6px;border-radius:3px}@media(max-width:768px){body{padding:40px 20px}.g{grid-template-columns:1fr}h1{font-size:1.5rem}.lo{width:32px;height:32px}.sb{font-size:12px;padding:8px 12px;bottom:16px;right:16px}}@media(prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator - Project Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0a0a;
+        }
+
+        header {
+            padding: 2rem 5%;
+            background: #0a0a0a;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .compass-icon {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .compass-icon::before,
+        .compass-icon::after {
+            content: '';
+            position: absolute;
+            background: #fff;
+        }
+
+        .compass-icon::before {
+            width: 2px;
+            height: 60%;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .compass-icon::after {
+            width: 60%;
+            height: 2px;
+            left: 20%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 5% 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #999;
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
+
+        .app-preview {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 0 5%;
+        }
+
+        .app-preview img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #222;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .features {
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            padding: 2rem;
+            background: #151515;
+            border-radius: 12px;
+            border: 1px solid #222;
+        }
+
+        .feature h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        .feature p {
+            color: #999;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 5%;
+            margin: 4rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: #fff;
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            color: #666;
+            border-top: 1px solid #222;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<button class="tt" id="t" aria-label="Toggle theme"><span id="ti">🌙</span></button>
-<div class="c">
-<div class="h"><div class="lo"></div><h1>Navigator</h1></div>
-<div id="c"><div class="l">Loading services...</div></div>
-</div>
-<div class="sb"><span id="sc">0</span> services | <span id="oc">0</span> online</div>
-<div class="ft">Made with <span>❤️</span> by <a href="https://github.com/rohanverma2007" target="_blank" rel="noopener noreferrer">Rohan Verma</a></div>
-<script>
-(()=>{
-const d=document,q=d.querySelector.bind(d),qa=d.querySelectorAll.bind(d),ls=localStorage,el=d.documentElement;
-let s=[],ci,lcc=null,sa=null;
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Navigator Logo" style="width: 32px; height: 32px;">
+            Navigator
+        </div>
+    </header>
 
-// Theme
-const pd=matchMedia('(prefers-color-scheme:dark)').matches,st=ls.getItem('t'),th=st||(pd?'dark':'light');
-el.setAttribute('data-theme',th);
-const ut=()=>{const ct=el.getAttribute('data-theme');q('#ti').textContent=ct==='dark'?'☀️':'🌙'};
-ut();
-q('#t').onclick=()=>{const ct=el.getAttribute('data-theme'),nt=ct==='dark'?'light':'dark';el.setAttribute('data-theme',nt);ls.setItem('t',nt);ut()};
+    <section class="hero">
+        <h1>Your Project Dashboard</h1>
+        <p class="subtitle">A lightweight, self-hosted service dashboard with dynamic config and built-in status monitoring. Everything runs in one container.</p>
+    </section>
 
-// Load config
-const lc=async()=>{
-try{
-let r,cl=0;
-for(const p of['./services.json','services.json']){
-try{r=await fetch(`${p}?t=${Date.now()}`);if(r.ok){cl=1;break}}catch{}}
-if(!cl&&location.protocol==='file:'){se();return}
-if(!cl)throw Error('Could not find services.json');
-const t=await r.text();
-if(t!==lcc){lcc=t;const d=JSON.parse(t);s=d.services||[];sa=d.statusApiUrl||null;rs();cs()}
-}catch(e){console.error('Failed to load config:',e);sh(e)}
-};
+    <section class="app-preview">
+        <img src="navigator.png" alt="Navigator App Dashboard">
+    </section>
 
-// Render services
-const rs=()=>{
-const c=q('#c'),sc=q('#sc'),oc=q('#oc');
-sc.textContent=s.length;
-if(!s.length){
-c.innerHTML=`<div class="e"><h2>No services configured</h2><p>Add services to your services.json file</p><div class="ce"><h3>Example services.json:</h3><pre>{
-  "services": [
-    {
-      "name": "Example Service",
-      "url": "example.rsap.sh",
-      "icon": "🚀"
-    }
-  ]
-}</pre></div></div>`;
-return}
-const g=d.createElement('div');
-g.className='g';
-s.forEach(sv=>{
-const a=d.createElement('a');
-let u=sv.url;
-if(!u.startsWith('http'))u='https://'+u;
-if(sv.port){const o=new URL(u);o.port=sv.port;u=o.toString()}
-a.href=u;a.className='sc';a.target='_blank';a.rel='noopener noreferrer';
-let ic='';
-if(sv.icon){
-if(sv.icon.startsWith('http')||sv.icon.startsWith('/')||sv.icon.includes('.')){
-ic=`<img src="${sv.icon}" alt="${sv.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='📦';">`}
-else ic=sv.icon}else ic='📦';
-const sc=sv.status==='online'?'on':sv.status==='offline'?'of':'';
-const du=sv.port?`${sv.url}:${sv.port}`:sv.url;
-a.innerHTML=`<div class="d ${sc}"></div><div class="si">${ic}</div><div class="sn"><div>${sv.name}</div><div>${du}</div></div>`;
-g.appendChild(a)});
-c.innerHTML='';c.appendChild(g);
-oc.textContent=s.filter(sv=>sv.status==='online').length
-};
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature">
+                <h3>Super Lightweight</h3>
+                <p>Only ~2.2 MB for the API and site. The HTML is just ~7KB - fits in one packet.</p>
+            </div>
+            <div class="feature">
+                <h3>Dynamic Config</h3>
+                <p>Add entries to service.json and the site updates automatically without restart</p>
+            </div>
+            <div class="feature">
+                <h3>Built-in Status API</h3>
+                <p>Pings each service to check availability. Everything runs in one container (~56KB total)</p>
+            </div>
+            <div class="feature">
+                <h3>Dark/Light Mode</h3>
+                <p>Toggle between themes with a built-in mode switcher</p>
+            </div>
+            <div class="feature">
+                <h3>Docker Ready</h3>
+                <p>Simple setup with Docker Compose or Podman</p>
+            </div>
+            <div class="feature">
+                <h3>Minimal & Clean</h3>
+                <p>Designed to be as lightweight and simple as possible</p>
+            </div>
+        </div>
+    </section>
 
-// Error handlers
-const sh=e=>{q('#c').innerHTML=`<div class="er"><h2>Configuration Error</h2><p>Failed to load services.json</p><pre>${e.message}</pre><div class="ce"><h3>Setup Instructions:</h3><p style="margin-bottom:10px;font-size:13px">1. Create a file named <strong>services.json</strong> in the same directory as this HTML file<br>2. Add your services configuration<br>3. Make sure you're serving files through a web server (not file://)</p><h3>Example services.json:</h3><pre>{
-  "services": [
-    {
-      "name": "Jellyfin",
-      "url": "jellyfin.example.com",
-      "icon": "🎭"
-    }
-  ]
-}</pre></div></div>`};
+    <section class="cta-section">
+        <a href="https://github.com/rohanverma2007/navigator/tree/main" class="cta-button">View on GitHub</a>
+    </section>
 
-const se=()=>{q('#c').innerHTML=`<div class="er"><h2>Local File Access Restricted</h2><p>Cannot load services.json using file:// protocol</p><div class="ce"><h3>How to fix:</h3><p style="margin-bottom:10px;font-size:13px">Option 1: Use a local web server<br><code>python3 -m http.server 8000</code><br><br>Option 2: Use Live Server in VS Code<br><br>Option 3: Deploy to your web server/Traefik</p></div></div>`};
-
-// Status check
-const ck=async i=>{
-const sv=s[i],u=sv.url.startsWith('http')?sv.url:`https://${sv.url}`;
-if(sa){
-try{const r=await fetch(`${sa}/check?url=${encodeURIComponent(u)}`);const d=await r.json();s[i].status=d.online?'online':'offline'}
-catch{s[i].status='online'}}
-else s[i].status='online';
-rs()};
-
-const cs=()=>s.forEach((_,i)=>ck(i));
-
-// Init
-lc();
-ci=setInterval(lc,5000);
-addEventListener('beforeunload',()=>ci&&clearInterval(ci))
-})();
-</script>
+    <footer>
+        <p>Navigator &copy; 2025 • Made with ❤️ by Rohan Verma</p>
+    </footer>
 </body>
 </html>
