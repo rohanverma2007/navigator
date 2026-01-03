@@ -7,6 +7,7 @@ Navigate between your HomeLab services
 
 ## credits
 - @faustinoaq for porting the JS api to C
+- ryanoasis/nerd-fonts for patching GoMono with nerd for GoMono Nerd Font
 
 ## features?
 - super lightweight, in my testing it uses about ~2.2 mb for running the API and the site, the html site is only ~7kb so it fits in one packet
