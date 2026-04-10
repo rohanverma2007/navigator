@@ -1,16 +1,40 @@
 {
   "services": [
     {
-      "name": "Example",
-      "url": "example.example.com",
-      "port": null,
-      "icon": "{PASTE IMAGE LINK OR EMOJI HERE}"
+      	"name": "Reqarr",
+      	"url": "req.rsap.sh",
+      	"port": null,
+      	"icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/requestrr.svg"
     },
     {
-      "name": "Example2",
-      "url": "example2.example.com",
-      "port": null,
-      "icon": "{PASTE IMAGE LINK OR EMOJI HERE}"
+      	"name": "Milna",
+      	"url": "im.rsap.sh",
+      	"port": null,
+      	"icon": "https://images.icon-icons.com/74/PNG/256/aol_14522.png"
+    },
+    {
+      	"name": "Jellyfin",
+      	"url": "jf.rsap.sh",
+      	"port": null,
+      	"icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/jellyfin.png"
+    },
+    {
+      	"name": "AMP Panel",
+      	"url": "amp.rsap.sh",
+      	"port": null,
+      	"icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/amp.png"
+    },
+    {
+	"name": "YT Converter",
+	"url": "yt.rsap.sh",
+	"port": null,
+	"icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/cobalt-dark.png"
+    },
+    {
+	"name": "Lightsearch",
+	"url": "browse.rsap.sh",
+	"port": null,
+	"icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/whoogle.png"
     }
   ],
   "statusApiUrl": "/api",

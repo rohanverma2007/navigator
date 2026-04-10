@@ -10,13 +10,22 @@ services:
     dns:
       - 1.1.1.1
       - 8.8.8.8
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.navigate.rule=Host(`navigate.rsap.sh`)"
+      - "traefik.http.routers.navigate.entrypoints=websecure"
+      - "traefik.http.routers.navigate.tls=true"
+      - "traefik.http.routers.navigate.tls.certresolver=lets-encrypt"
+      - "traefik.http.services.navigate.loadbalancer.server.port=11080"
+    networks:
+      - podman
     volumes:
       - ./index.html:/app/index.html:ro
       - ./services.json:/app/services.json:ro
       - ./assets/dark.png:/app/dark.png:ro
       - ./assets/light.png:/app/light.png:ro
       - ./status-api/server.c:/app/server.c:ro
-      - ./fonts:./fonts:ro
+      - ./fonts:/app/fonts:ro
     entrypoint: |
       sh -c "
         apk add --no-cache curl gcc musl-dev &&
@@ -25,3 +34,7 @@ services:
         ls -lh server &&
         ./server
       "
+
+networks:
+  podman:
+    external: true
